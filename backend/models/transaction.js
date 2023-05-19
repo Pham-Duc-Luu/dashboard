@@ -1,0 +1,13 @@
+import mongoose from "mongoose";
+
+const TransactionSchema = new mongoose.Schema(
+  {
+    userId: String,
+    cost: Number,
+    products: { type: [mongoose.Types.ObjectId], of: Number },
+  },
+  { timestamps: true }
+);
+
+const TransactionModal = mongoose.model("Transaction", TransactionSchema);
+export default TransactionModal;
